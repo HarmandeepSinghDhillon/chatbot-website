@@ -26,7 +26,7 @@ async function sendMessage() {
     userInput.value = ''; // Clear the input field
 
     try {
-        const response = await fetch('https://chatbot-website-x9bs.onrender.com', { // Replace with your backend URL if different
+        const response = await fetch('http://localhost::3000', { // Replace with your backend URL if different
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
