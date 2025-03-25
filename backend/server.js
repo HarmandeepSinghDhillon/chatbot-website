@@ -1,11 +1,12 @@
 require('dotenv').config(); // Load environment variables
 const express = require('express');
+const path = require('path');
+const cors = require('cors'); // Import the cors module
 const {
     GoogleGenerativeAI,
     HarmCategory,
     HarmBlockThreshold,
 } = require("@google/generative-ai");
-const cors = require('cors'); // Import the cors module
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -29,6 +30,12 @@ const generationConfig = {
 };
 
 const chatSessions = new Map(); // Store chat sessions
+app.use(express.static(path.join(__dirname, '../frontend')));
+
+// Route to serve index.html when accessing http://localhost:3000
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend', '../frontend/index.html'));
+});
 
 app.post('/chat', async (req, res) => {
     const { message, sessionId } = req.body;
