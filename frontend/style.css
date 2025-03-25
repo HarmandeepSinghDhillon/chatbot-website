@@ -1,0 +1,131 @@
+body {
+    background-color: #2e2e2e; /* Dark background */
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: sans-serif;
+    color: #e0e0e0; /* Light text for dark background */
+    height: 100vh; /* Make the body take up the full viewport height */
+    overflow: hidden;
+}
+
+#logo {
+    position: absolute;
+    top: 50px;
+    left: 60px;
+    z-index: 10;
+}
+
+#logo img {
+    height: 100px;
+}
+
+#chat-container {
+    flex-grow: 1; /* Allows chat to take up remaining space */
+    display: flex;
+    flex-direction: column;
+    background-color: #333333;
+    overflow-y: auto; /* Enables scrolling if needed */
+}
+
+#header {
+    background-color: #444444; /* Slightly lighter header */
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    border-top-left-radius: 0; /* Remove rounded corners */
+    border-top-right-radius: 0; /* Remove rounded corners */
+}
+
+#send-button:hover {
+    background-color: #3755b5; /* Darker blue on hover */
+}
+
+@media (max-width: 600px) {
+    #user-input {
+        width: 100%;
+        margin-right: 0;
+    }
+    #send-button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+#footer {
+    background-color: #272626;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 6px;
+    font-size: 18px;
+    width: 100%;
+}
+
+#chat-log {
+    flex: 1; /* Makes chat log expand to available space */
+    padding: 15px;
+    background-color: #2e2e2e;
+    overflow: hidden;
+}
+
+.chat-message {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    display: inline-block;
+    clear: both;
+    max-width: 70%; /* Limit message width */
+}
+
+.user-message {
+    background-color: #496fe0; /* Blue for user */
+    color: white;
+    float: right;
+    font-size: 25px;
+}
+
+.bot-message {
+    background-color: #a0a09e; /* Light gray for bot */
+    color: black;
+    float: left;
+    font-size: 25px;
+}
+
+.message-timestamp {
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 5px;
+    display: block;
+}
+
+#input-container {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #555; /* Darker border */
+}
+
+#user-input {
+    flex-grow: 1;
+    min-height: 40px;
+    padding: 10px;
+    border: 1px solid #666; /* Darker border */
+    border-radius: 25px;
+    margin-right: 10px;
+    font-size: 25px;
+    width: 70%;
+    resize: horizontal;
+    background-color: #444; /* Darker input background */
+    color: #e0e0e0;
+}
+
+#send-button {
+    background-color: #496fe0; /* Blue send button */
+    color: white;
+    padding: 10px 50px;
+    font-size: 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
